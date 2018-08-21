@@ -1,0 +1,61 @@
+
+<body>
+	<h3>Cadastrar Classe</h3>
+	<br>
+	<form>
+		<div>
+
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label for="assunt">Descricao: </label> <input type="text"
+						id="assunt" data-ng-model="nivel.descricao" class="form-control"><br>
+				</div>
+				<div class="form-group  col-md-2">
+					<label for="assunt">P.Unitario: </label> <input type="text"
+						id="assunt" data-ng-model="nivel.valor" class="form-control"
+						placeholder=""><br>
+				</div>
+<div class="form-group col-md-2">
+				<label for="assunt">Valor Esperado: </label> <input type="text"
+						id="assunt" data-ng-model="nivel.esperado" class="form-control"
+						placeholder="Valor anual esperado" disabled="disabled">
+				</div>
+			</div>
+
+<div class="row">
+				<div class="form-group col-md-2">
+			<button ng-click="cal()" class="btn btn-default">C.Total</button>
+				</div>
+				
+				
+				
+				</div>
+<br><br>
+
+			<button type="button" data-ng-click="create(nivel)"
+				class="btn btn-default">Guardar</button>
+			<br> <br> <br>
+			<table class="table table-stripped">
+				<tr>
+					<th>Nome classe</th>
+					<th>Custo</th>
+					<th>Accoes</th>
+
+
+				</tr>
+				<tr data-ng-repeat="nivel in nivels">
+					<td>{{nivel.descricao}}</td>
+					<td style="color: red">{{nivel.valor}} MT</td>
+
+					<td>
+						<button type="button" class="btn btn-primary"
+							data-ng-click="alterar(nivel)">Alterar</button>
+						<button type="button" class="btn btn-danger"
+							data-ng-click="deletar(nivel)">Excluir</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+

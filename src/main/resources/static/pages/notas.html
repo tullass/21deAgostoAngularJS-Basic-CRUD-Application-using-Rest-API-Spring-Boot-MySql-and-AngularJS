@@ -1,0 +1,237 @@
+
+<head>
+<title>Avaliações</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<h4 ng-show="s">Editar</h4>	<h3>Avaliações</h3>
+	
+	<br>
+	<br>
+	<form>
+		<div ng-hide="s">
+			<div class="row" >
+				<div class="form-group col-md-4">
+					<label for="assunt">Professor: </label> <select 
+						class="form-control" ng-model="avaliacoes.professor"
+						ng-options="operadora.nome for operadora in pross">
+						<option value=""></option>
+					</select>
+				</div>
+
+				<div class="form-group col-md-2">
+					<label for="assunt">Turma: </label> <select class="form-control"
+						ng-model="avaliacoes.turmaa"
+						ng-options="operadora.descricao for operadora in avaliacoes.professor.turma">
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="form-group col-md-2">
+					<label for="assunt">Disciplina: </label> <select
+						class="form-control" ng-model="avaliacoes.disciplina"
+						ng-options="operadora.descricao for operadora in avaliacoes.professor.disciplina">
+						<option value=""></option>
+					</select>
+				</div>
+</div>3
+			</div>
+			<div class="row" >
+				<div class="form-group col-md-4">
+					<label for="assunt">Nome: </label> <input type="text"
+						class="form-control" readonly="readonly"
+						data-ng-model="avaliacoes.matricula.aluno.nome" />
+				</div>
+</div><div ng-hide="s">
+<div class="form-group col-md-2">
+					<label>Trimestre <select
+					ng-model="avaliacoes.trimestre"
+					class="form-control" required="required">
+						<option ng-repeat="d in semestress" value="{{d.id}}">{{d.descricao}}</option>
+				</select></label>
+
+			</div>
+			<a data-toggle="modal" data-target="#myModal" class="btn btn-default"
+				style="color: red">Add Aluno</a>
+		</div>
+		<br> <br> <br>
+		<fieldset class="scheduler-border">
+			<legend class="scheduler-border">Dados Avaliativos</legend>
+
+			<div class="row">
+
+
+
+
+
+
+				<div class="form-group col-md-1">
+					<label for="assunt">Prova 1.:</label> <input type="text"
+						ng-model="avaliacoes.avalia.nota1" class="form-control" />
+				</div>
+				<div class="form-group col-md-1">
+					<label for="assunt">W-1.: </label> <input type="text"
+						class="form-control" ng-model="avaliacoes.avalia.t1" />
+				</div>
+				<div class="form-group col-md-1">
+					<label for="assunt">Prova 2.: </label> <input type="text"
+						class="form-control" ng-model="avaliacoes.avalia.nota2" />
+				</div>
+				<div class="form-group col-md-1">
+					<label for="assunt">W-2.: </label> <input type="text"
+						class="form-control" ng-model="avaliacoes.avalia.t2" />
+				</div>
+				<div class="form-group col-md-1">
+					<label for="assunt">Prova 3.: </label> <input type="text"
+						class="form-control" ng-model="avaliacoes.avalia.nota3" />
+				</div>
+
+				<div class="form-group col-md-2">
+					<label for="assunt">Situação.: </label> <select
+						ng-model="avaliacoes.avalia.situacao" class="form-control">
+						<option value=""></option>
+						<option>Exame</option>
+						<option>Aprovado</option>
+						<option>Reprovado</option>
+						<option>Dispensado</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-2">
+
+					<label>Tem Exame?</label> <input type="checkbox" ng-model="m" class="form-control"/>
+				</div>
+			</div>
+			<div class="row">
+
+				<div ng-show="m">
+					<div class="form-group col-md-1">
+
+						<label for="assunt">Exame.:</label> <input type="text"
+							ng-model="avaliacoes.avalia.exame" class="form-control" />
+
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Recorrencia.</label> <input type="text"
+							ng-model="avaliacoes.avalia.recorrencia" class="form-control" />
+
+
+					</div>
+					<div class="form-group col-md-2">
+						<label for="assunt">Resultado.: </label> <select
+							ng-model="avaliacoes.avalia.resultado" class="form-control"
+							style="color: blue">
+							<option value=""></option>
+							<option style="color: blue">Aprovado</option>
+							<option style="color: red">Reprovado</option>
+
+						</select>
+
+					</div>
+				</div>
+
+			</div>
+
+		</fieldset>
+		<br>
+		<br>
+
+
+		<button type="button" class="btn btn-primary" ng-hide="s"
+			ng-click="create(avaliacoes)">Guardar</button>
+		<button type="button" class="btn btn-danger" ng-show="s"
+			ng-click="create(avaliacoes)">Editar existente</button>
+		<a href="#/listaNota" class="btn btn-link">Buscar</a> <br> <br>
+
+	</form>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">Adicione o Aluno</h4>
+							</div>
+							<div class="modal-body">
+									<div class="row">
+						<div class="form-group col-md-2">
+							<label for="assunt">Nome: </label> <input class="form-control"
+								type="text" ng-model="search.aluno.nome">
+
+						</div><div class="form-group col-md-2">
+					<label>Turma <select
+					ng-model="search.turma.descricao"
+					class="form-control" required="required"><option value=""></option>
+						<option ng-repeat="d in avaliacoes.professor.turma" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select></label>
+
+				</div><div class="form-group col-md-2">
+					<label for="assunt">Trimestre: </label> <select class="form-control"
+						ng-model="avaliacoes.trimestre"
+						ng-options="operadora.descricao for operadora in semestress">
+					</select>
+				</div><br><div class="form-group col-md-2">
+
+		<button class="btn btn-primary" ng-click="listarAl()" 
+ >Carregar.. </button>
+			
+	</div>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+
+					<table class="table table-hover">
+						<tr>							
+						
+							<th>Nome do aluno</th>
+							<th>Género</th>
+							<th>Turma</th>
+							<th>Classe</th>
+							<th>Sala</th>
+							<th>Semestre</th>
+							<th>Acções</th>
+
+
+
+
+						</tr>
+						<tr
+							data-ng-repeat="banco in alunos | filter:search:strict track by banco.id">							<td>{{banco.id}}</td>
+							
+							<td>{{banco.aluno.nome}}</td>
+							<td>{{banco.aluno.genero}}</td>
+
+							<td>{{banco.turma.descricao}}</td>
+							<td>{{banco.turma.nivel.descricao}}</td>
+							<td>{{banco.turma.sala}}</td>
+							<td>{{banco.semestre.descricao}}</td>
+
+								<td><button data-dismiss="modal" ng-click="alterar(banco)"
+									class="btn btn-default btn-addon m-b-sm btn-rounded btn-sm">Add
+								</button></td>
+
+
+						</tr>
+					</table>
+
+							</div>
+							<div class="modal-footer">
+								<button type="submit" id="add-row" data-dismiss="modal"
+									class="btn btn-success">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+</body>
+
+
+
+</html>

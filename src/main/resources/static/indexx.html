@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html ng-app="bancoo">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="horizon/pace-theme-flash.css">
+<link rel="stylesheet" type="text/css" href="horizon/uniform.default.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="horizon/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="horizon/simple-line-icons.css">
+<link rel="stylesheet" type="text/css" href="horizon/menu_cornerbox.css">
+<link rel="stylesheet" type="text/css" href="moder/waves.css">
+<link rel="stylesheet" type="text/css" href="moder/switchery.css">
+<link rel="stylesheet" type="text/css" href="horizon/style.css">
+<link rel="stylesheet" type="text/css" href="horizon/component.css">
+<link rel="stylesheet" type="text/css" href="css/modern.min.css">
+
+<link rel="stylesheet" type="text/css" href="moder/green.css">
+	<script type="text/javascript" src="assets/modernizr.js"></script>
+		<script type="text/javascript" src="assets/snap.svg-min.js"></script>
+	
+
+
+
+
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="css/fieldset.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="css/mm.css"> -->
+
+<!-- <link rel="stylesheet" type="text/css" href="css/estilo.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="css/tab.css"> -->
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="moder/switchery.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="moder/switchery.css">
+
+
+
+
+
+
+
+
+<title>SGE</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular-ui-utils.js"></script>
+<script type="text/javascript" src="js/ss.js"></script>
+
+<script type="text/javascript" src="rotas.js"></script>
+<script type="text/javascript" src="interceptors/temposs.js"></script>
+
+
+
+<script type="text/javascript" src="ctrl/bancoCtrl.js"></script>
+<script type="text/javascript" src="ctrl/classeCtrl.js"></script>
+<script type="text/javascript" src="ctrl/alunoCrtl.js"></script>
+<script type="text/javascript" src="ctrl/tipo.js"></script>
+<script type="text/javascript" src="ctrl/extratoCtrl.js"></script>
+
+
+<script type="text/javascript" src="ctrl/faturadatas.js"></script>
+
+
+
+<script type="text/javascript" src="ctrl/turmaCtrl.js"></script>
+<script type="text/javascript" src="ctrl/devedoresCtrl.js"></script>
+<script type="text/javascript" src="ctrl/cargo.js"></script>
+
+
+<script type="text/javascript" src="service/turmaService.js"></script>
+<script type="text/javascript" src="service/alunoService.js"></script>
+<script type="text/javascript" src="pdf/pdfmake.js"></script>
+<script type="text/javascript" src="pdf/htmlcanvas.js"></script>
+
+
+
+<script type="text/javascript" src="ctrl/adiantado.js"></script>
+<script type="text/javascript" src="ctrl/faturaadiantadodatas.js"></script>
+
+<script type="text/javascript" src="ctrl/semestre.js"></script>
+
+<script type="text/javascript" src="ctrl/adiantadoReport.js"></script>
+
+
+
+<script type="text/javascript" src="ctrl/tabelaCtrl.js"></script>
+<script type="text/javascript" src="ctrl/avaliacaoCrtl.js"></script>
+
+<script type="text/javascript" src="ctrl/matriculaCrtl.js"></script>
+
+<script type="text/javascript" src="ctrl/notaCtrl.js"></script>
+<script type="text/javascript" src="ctrl/genCrtl.js"></script>
+
+<script type="text/javascript" src="ctrl/notaListaCtrl.js"></script>
+<script type="text/javascript" src="ctrl/professorCrtl2.js"></script>
+<script type="text/javascript" src="ctrl/pagamentoCrtl.js"></script>
+
+<script type="text/javascript" src="ctrl/faturaa3.js"></script>
+<script type="text/javascript" src="ctrl/disciplina.js"></script>
+
+<script type="text/javascript" src="service/pagamentoService.js"></script>
+
+<script type="text/javascript" src="service/avaliacaoService.js"></script>
+
+<script type="text/javascript" src="service/adiantadoService.js"></script>
+<script type="text/javascript" src="service/ClasseService.js"></script>
+<script type="text/javascript" src="service/genService.js"></script>
+<script type="text/javascript" src="service/professorService.js"></script>
+
+
+
+
+<script type="text/javascript" src="service/bancoService.js"></script>
+<script type="text/javascript" src="service/tabelaService.js"></script>
+<script type="text/javascript" src="service/notasService.js"></script>
+<script type="text/javascript" src="service/notaListaService.js"></script>
+<script type="text/javascript" src="service/matriculaService.js"></script>
+<script type="text/javascript" src="amoments/moment.js"></script>
+
+
+
+
+
+
+
+
+
+</head>
+<body class="page-header-fixed">
+	<div class="overlay"></div>
+
+
+
+	<!-- Search Form -->
+	<main class="page-content content-wrap">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="sidebar-pusher">
+				<a href="javascript:void(0);"
+					class="waves-effect waves-button waves-classic push-sidebar"> <i
+					class="fa fa-bars"></i>
+				</a>
+			</div>
+			<div class="logo-box">
+				<a href="index.html" class="logo-text"><span>Modern </span></a>
+			</div>
+			<!-- Logo Box -->
+			<div class="search-button">
+				<a href="javascript:void(0);"
+					class="waves-effect waves-button waves-classic show-search"><i
+					class="fa fa-search"></i></a>
+			</div>
+			<div class="topmenu-outer">
+				<div class="top-menu">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="javascript:void(0);"
+							class="waves-effect waves-button waves-classic sidebar-toggle"><i
+								class="fa fa-bars"></i></a></li>
+
+
+						<li><a href="javascript:void(0);"
+							class="waves-effect waves-button waves-classic toggle-fullscreen"><i
+								class="fa fa-expand"></i></a></li>
+						<li class="dropdown"><a href=""
+							class="dropdown-toggle waves-effect waves-button waves-classic"
+							data-toggle="dropdown"> <i class="fa fa-cogs"></i>
+						</a>
+							<ul
+								class="dropdown-menu dropdown-md dropdown-list theme-settings"
+								role="menu">
+								<li class="li-group">
+									<ul class="list-unstyled">
+										<li class="no-link" role="presentation">Fixed Header
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right fixed-header-check" checked>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="li-group">
+									<ul class="list-unstyled">
+										<li class="no-link" role="presentation">Fixed Sidebar
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right fixed-sidebar-check" checked>
+											</div>
+										</li>
+										<li class="no-link" role="presentation">Horizontal bar
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right horizontal-bar-check">
+											</div>
+										</li>
+										<li class="no-link" role="presentation">Toggle Sidebar
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right toggle-sidebar-check">
+											</div>
+										</li>
+										<li class="no-link" role="presentation">Compact Menu
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right compact-menu-check">
+											</div>
+										</li>
+										<li class="no-link" role="presentation">Hover Menu
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right hover-menu-check">
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="li-group">
+									<ul class="list-unstyled">
+										<li class="no-link" role="presentation">Boxed Layout
+											<div class="ios-switch pull-right switch-md">
+												<input type="checkbox"
+													class="js-switch pull-right boxed-layout-check">
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="li-group">
+									<ul class="list-unstyled">
+										<li class="no-link" role="presentation">Choose Theme
+											Color
+											<div class="color-switcher">
+												<a class="colorbox color-blue" href="?theme=blue"
+													title="Blue Theme" data-css="blue"></a> <a
+													class="colorbox color-green" href="?theme=green"
+													title="Green Theme" data-css="green"></a> <a
+													class="colorbox color-red" href="?theme=red"
+													title="Red Theme" data-css="red"></a> <a
+													class="colorbox color-white" href="?theme=white"
+													title="White Theme" data-css="white"></a> <a
+													class="colorbox color-purple" href="?theme=purple"
+													title="purple Theme" data-css="purple"></a> <a
+													class="colorbox color-dark" href="?theme=dark"
+													title="Dark Theme" data-css="dark"></a>
+											</div>
+										</li>
+									</ul>
+								</li>
+								<li class="no-link"><button
+										class="btn btn-default reset-options">Reset Options</button></li>
+							</ul></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="javascript:void(0);"
+							class="waves-effect waves-button waves-classic show-search"><i
+								class="fa fa-search"></i></a></li>
+
+
+
+						<li><a
+							class="log-out waves-effect waves-button waves-classic"> <span><i
+									class="fa fa-sign-out m-r-xs"></i>Log out</span>
+						</a></li>
+						<li><a href="javascript:void(0);"
+							class="waves-effect waves-button waves-classic" id="showRight">
+								<i class="fa fa-comments"></i>
+						</a></li>
+					</ul>
+					<!-- Nav -->
+				</div>
+				<!-- Top Menu -->
+			</div>
+		</div>
+	</div>
+	<!-- Navbar -->
+	<div class="page-sidebar sidebar">
+		<div class="page-sidebar-inner slimscroll">
+			<div class="sidebar-header">
+				<div class="sidebar-profile">
+					<a href="javascript:void(0);" id="profile-menu-link">
+						<div class="sidebar-profile-image">
+							<img src="#" class="img-circle img-responsive" alt="">
+						</div>
+						<div class="sidebar-profile-details">
+							<span>Valter Wilca<br> <small>Art Director</small></span>
+						</div>
+					</a>
+				</div>
+			</div>
+			<ul class="menu accordion-menu">
+
+				<li><a href="#/dashboard" class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-home"></span>
+						<p>Dashboard</p></a></li>
+
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-edit"></span>
+						<p>Academico</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/cad/servicos" class="btn btn-link">Serviços</a></li>
+						<li><a href="#/cad/classe" class="btn btn-danger">Classes</a>
+						</li>
+						<li><a href="#/cad/turma" class="btn btn-link">Turmas</a></li>
+						<li><a href="#/cad/semestre" class="btn btn-link">Trimestre</a></li>
+						<li><a href="#/cad/disciplina" class="btn btn-link">
+								Disciplina</a></li>
+
+
+
+					</ul></li>
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-user"></span>
+						<p>Aluno</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/cad/aluno" class="btn btn-link">Aluno</a></li>
+						<li><a href="" class="btn btn-link">Certificados </a></li>
+						<li><a href="" class="btn btn-link">Registros Aluno </a></li>
+						<li><a href="" class="btn btn-link">Cancelar Matricula </a></li>
+
+					</ul></li>
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-briefcase"></span>
+						<p>Funcionario</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/cargos" class="btn btn-link">Cargos</a></li>
+						<li><a href="#/cadastrar/professor" class="btn btn-link">Cadastrar
+								Funcionario </a></li>
+						<li><a href="" class="btn btn-link">Registros Professor </a></li>
+
+					</ul></li>
+
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-book"></span>
+						<p>Avaliações</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/notas" class="btn btn-link">Novo </a></li>
+						<li><a href="#/listaNota" class="btn btn-link">Listar
+								Avaliados </a></li>
+
+					</ul></li>
+<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-share"></span>
+						<p>Matricula</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/cad/matricula" class="btn btn-link">Matricular </a></li>
+						
+					</ul></li>
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-briefcase"></span>
+						<p>Tesoureiro</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/faturaa" class="btn btn-link">Pagamentos</a></li>
+						<li><a href="#/adiantadoo" class="btn btn-link">Adiantamento</a></li>
+
+					</ul></li>
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-log-out"></span>
+						<p>Saidas</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/despesas" class="btn btn-link">Tipo de
+								Despesas</a></li>
+
+						<li><a href="" class="btn btn-link">Despesas Escolar</a></li>
+						<li><a href="#/salarios" class="btn btn-link">Pagamento
+								de Salario</a></li>
+
+					</ul></li>
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-usd"></span>
+						<p>Finanças</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/caixaa" class="btn btn-link">Saldo</a></li>
+						<li><a href="#/extratoPagamento" class="btn btn-link">Extrato</a></li>
+
+						<li><a href="#/devedor" class="btn btn-link">Devedores</a></li>
+					</ul></li>
+
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-list"></span>
+						<p>Relatorios</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#/adiantadoReport" class="btn btn-link">Pagamentos
+								Adiantados</a></li>
+						<li><a href="#/fatura/Report" class="btn btn-link">Datas
+								Adiantado</a></li>
+						<li><a href="#/mes/pagos" class="btn btn-link">Meses
+								Pagos</a></li>
+
+						<li><a href="#/fatura/data" class="btn btn-link">Pesquisar
+								Datas</a></li>
+						<li><a href="#/report/faturas" class="btn btn-link">Relatorios
+						</a></li>
+
+
+
+					</ul></li>
+
+				<li class="droplink"><a href="#"
+					class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-log-in"></span>
+						<p>Login</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+
+						<li><a>Lock Screen</a></li>
+					</ul></li>
+				<li class="droplitnk"><a class="waves-effect waves-button"><span
+						class="menu-icon glyphicon glyphicon-map-marker"></span>
+						<p>Maps</p> <span class="arrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#">Localizar</a></li>
+						<li><a href="#">Vector Maps</a></li>
+					</ul></li>
+
+				<li class="droplitnk"><a href="#"
+					class="waves-effect waves-button"><span></span>
+						<p></p> <span class="arroww"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#">Google Maps</a></li>
+						<li><a href="#">Vector Maps</a></li>
+					</ul></li>
+				<li class="droplintk"><a href="#"
+					class="waves-effect waves-button"><span></span>
+						<p></p> <span class="arwrow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#">Google Maps</a></li>
+						<li><a href="#">Vector Maps</a></li>
+					</ul></li>
+				<li class="droplintk"><a href="#"
+					class="waves-effect waves-button"><span></span>
+						<p></p> <span class="arrwow"></span></a>
+					<ul class="sub-menu">
+						<li><a href="#">Google Maps</a></li>
+						<li><a href="#">Vector Maps</a></li>
+					</ul></li>
+
+
+
+			</ul>
+		</div>
+		<!-- Page Sidebar Inner -->
+	</div>
+	<!-- Page Sidebar -->
+	<div class="page-inner">
+		<div class="page-title">
+
+
+			<div id="main-wrapper">
+				<div class="container">
+					<ng-view></ng-view>
+
+				</div>
+				<!-- Row -->
+			</div>
+			<!-- Main Wrapper -->
+		</div>
+
+
+	</div>
+	<!-- Page Inner --> </main>
+	<!-- Page Content -->
+
+	<div class="cd-overlay"></div>
+	<script type="text/javascript" src="assets/jquery-2.1.4.min.js"></script>
+
+	<script type="text/javascript" src="assets/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="assets/pace.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.blockui.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="assets/jquery.slimscroll.min.js"></script>
+
+	<script type="text/javascript" src="assets/switchery.min.js"></script>
+
+	<script type="text/javascript" src="assets/jquery.uniform.js"></script>
+	<script type="text/javascript" src="assets/waves.js"></script>
+	<script type="text/javascript" src="assets/main.js"></script>
+	<script type="text/javascript" src="assets/modern.min.js"></script>
+</html>

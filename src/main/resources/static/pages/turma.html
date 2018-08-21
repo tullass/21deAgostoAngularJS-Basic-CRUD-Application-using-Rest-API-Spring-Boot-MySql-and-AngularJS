@@ -1,0 +1,74 @@
+
+<body>
+	<h3>Turma Classe</h3>
+	<br>
+	<form>
+		<div>
+
+			<div class="row">
+				<div class="form-group col-md-2">
+					<label for="assunt">Descricao: </label> <input type="text"
+						id="assunt" data-ng-model="turma.descricao" placeholder="Turma Descricao" class="form-control"><br>
+				</div>
+				<div class="form-group  col-md-2">
+					<label for="assunt">Abreviatura: </label> <input type="text"
+						id="assunt" data-ng-model="turma.abreviado" class="form-control"
+						placeholder="Nome Abreviado"><br>
+				</div>
+				<div class="form-group  col-md-2">
+					<label for="assunt">Ano em curso: </label> <input type="number"
+						id="assunt" class="form-control"><br>
+				</div>
+			</div>
+
+			<div class="row">
+				
+				<div class="form-group col-md-2">
+					<label for="assunt">Classe: </label> <select class="form-control"
+						data-ng-model=turma.nivel.id>
+						<option value=""></option>
+						<option data-ng-repeat="fatura in classes" value="{{fatura.id}}">{{fatura.descricao}}</option>
+					</select>
+
+				</div><div class="form-group  col-md-2">
+					<label for="assunt">Sala: </label> <input type="text"
+						id="assunt" data-ng-model="turma.sala" class="form-control"
+						placeholder="Sala"><br>
+				</div>
+			</div>
+			<button type="button" data-ng-click="novo()" class="btn btn-primary">Novo</button>
+
+			<button type="button" data-ng-click="create(turma)"
+				class="btn btn-default">Guardar</button>
+			<br> <br> <br>
+			<table class="table table-stripped table-bordered">
+				<tr>
+					<th>Nome Turma</th>
+					<th>Nome Abreviado</th>
+					<th>Ano</th>
+					<th>Sala</th>
+					<th>Classe</th>
+					<th>Accoes</th>
+
+				</tr>
+				<tr data-ng-repeat="turma in turmas">
+					<td>{{turma.descricao}}</td>
+					<td>{{turma.abreviado}}</td>
+					<td>{{turma.data}}</td>
+
+					<td >{{turma.sala}}</td>
+					<td>{{turma.nivel.descricao}}</td>
+
+
+					<td>
+						<button type="button" class="btn btn-primary"
+							data-ng-click="alterar(turma)">Alterar</button>
+						<button type="button" class="btn btn-danger"
+							data-ng-click="deletar(turma)">Excluir</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+

@@ -1,0 +1,80 @@
+
+<head>
+<title>Avaliacao</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<body>
+	<h2>Cadastrar Avaliacoes</h2>
+	<form>
+		<br> <br>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label for="assunt">Turma: </label> <select  class="js-states form-control" multiple="multiple" 
+					class="form-control" ng-model="avaliacoes.turmaa"
+					ng-options="operadora.descricao for operadora in turmas">
+				</select>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="assunt">Trimestre: </label> <select class="form-control"
+					ng-model="avaliacoes.trimestre"
+					ng-options="operadora.descricao for operadora in semestress">
+					<option value=""></option>
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<label for="assunt">Data: </label><input type="date"
+					ng-model="avaliacoes.data" class="form-control">
+			</div>
+
+
+		</div>
+		<br> <br>
+		<div>
+
+			<button type="button" data-ng-click="create(avaliacoes)"
+				class="btn btn-primary">Guardar & Continuar</button>
+		</div>
+		<br> <br> <br> <br>
+
+	</form>
+	<div class="row">
+		<div class="form-group col-md-7">
+			<table class="table table-hover">
+				<tr>
+					<th>Id</th>
+					<th></th>
+					<th>Trimestre</th>
+
+					<th>Disciplina</th>
+
+				</tr>
+				<tbody ng-repeat="c in avaliacoess">
+					<tr>
+						<td>{{c.id}}</td>
+						<td>{{c.nome}}</td>
+						<td>{{c.trimestre.descricao}}</td>
+
+						<td>
+							<table>
+
+								<tbody ng-repeat="o in c.turmaa">
+									<tr>
+										<td>{{o.id}}</td>
+										<td>{{o.descricao}} : {{o.data}}</td>
+
+										<td></td>
+										<td><a href="#/notas/{{o.id}}">add</a>
+										<td>
+
+												<a data-ng-click="alterar(c)" class="btn btn-xs btn-default" 
+												   title="Editar"><span class="fa fa-pencil"></span></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>

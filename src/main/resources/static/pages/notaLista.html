@@ -1,0 +1,138 @@
+
+<head>
+<title>Avaliaçõesoes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<br>
+<br>
+
+
+<br />
+
+
+<br />
+
+
+<body>
+	<h2>lista de alunos</h2>
+	<br>
+	<br>
+	<form>
+		<div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="assunt">Professor: </label> <select
+						class="form-control" ng-model="avaliacoes.professor"
+						ng-options="operadora.nome for operadora in pross">
+						<option value=""></option>
+					</select>
+				</div>
+
+				<div class="form-group col-md-2">
+					<label>Turma <select
+						ng-model="search.matricula.turma.descricao" class="form-control"
+						><option value=""></option>
+							<option ng-repeat="d in avaliacoes.professor.turma"
+								value="{{d.descricao}}">{{d.descricao}}-{{d.data}}</option>
+					</select></label>
+
+				</div>
+				<div class="form-group col-md-2">
+					<label>Disciplina <select
+						ng-model="search.disciplina.descricao" class="form-control"
+						>
+							<option ng-repeat="d in avaliacoes.professor.disciplina"
+								value="{{d.descricao}}">{{d.descricao}}</option>
+					</select></label>
+
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label for="assunt">Nome: </label> <input type="text"
+						class="form-control" data-ng-model="search.matricula.aluno.nome" />
+				</div>
+
+
+				<div class="form-group col-md-2">
+					<label>Trimestre <select
+						ng-model="search.trimestre.descricao" class="form-control"
+						><option value=""></option>
+							<option ng-repeat="d in semestress" value="{{d.descricao}}">{{d.descricao}}</option>
+					</select></label>
+
+				</div>
+			</div>
+
+			<br> <br> <br> <br>
+			<div style="text-align: left">
+				<table class="table table-hover">
+					<tr>
+
+						<th>Aluno</th>
+						<th>Classe</th>
+						<th>Trimestre</th>
+
+						<th>Turma</th>
+
+						<th>Discipina</th>
+
+						<th>Prova1</th>
+
+						<th>W-1</th>
+						<th>Prova2</th>
+						<th>W-2</th>
+						<th>Prova3</th>
+						<th>Situacao</th>
+						<th>Exame</th>
+						<th>Recorrencia</th>
+						<th>Resultado</th>
+						<th>Accoes</th>
+
+
+
+
+
+
+
+					</tr>
+					<tr
+						data-ng-repeat="banco in avaliacoess | filter:search:strict track by banco.id">
+
+						<td>{{banco.matricula.aluno.nome}}</td>
+						<td>{{banco.matricula.turma.nivel.descricao}}</td>
+						<td>{{banco.trimestre.descricao}}</td>
+
+						<td>{{banco.matricula.turma.descricao}}:{{banco.matricula.turma.data}}</td>
+
+						<td>{{banco.disciplina.descricao}}</td>
+
+						<td>{{banco.avalia.nota1}}</td>
+						<td>{{banco.avalia.t1}}</td>
+
+						<td>{{banco.avalia.nota2}}</td>
+						<td>{{banco.avalia.t2}}</td>
+
+						<td>{{banco.avalia.nota3}}</td>
+						<td>{{banco.avalia.situacao}}</td>
+						<td>{{banco.avalia.exame}}</td>
+						<td>{{banco.avalia.recorrencia}}</td>
+						<td>{{banco.avalia.resultado}}</td>
+
+
+
+						<td><a href="#/notas/{{banco.id}}"
+							class="btn btn-primary btn-addon m-b-sm btn-rounded btn-sm">Avaliar</a>
+							<button ng-click="aa(banco)"
+								class="btn btn-default btn-addon m-b-sm btn-rounded btn-sm">Print
+							</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</body>
+
+

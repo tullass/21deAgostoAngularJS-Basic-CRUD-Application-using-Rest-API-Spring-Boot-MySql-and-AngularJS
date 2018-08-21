@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
+<!-- 2018-08-09T20:48:17 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="avalia" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b8539117-e7f2-49d1-8270-108f5257420e">
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="matricula.aluno.nome" class="java.lang.String"/>
+	<field name="disciplina.descricao" class="java.lang.String"/>
+	<field name="avalia.nota1" class="java.lang.String"/>
+	<field name="trimestre.descricao" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="30" width="140" height="30" uuid="8ad60af2-a5fa-4255-a4f2-18f7764a49f2"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TESTE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="30" width="100" height="30" uuid="4a36416e-90df-4cd5-b76a-6c1b749ff8f4"/>
+				<text><![CDATA[aluno.nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="30" width="100" height="30" uuid="23dcff6c-e530-4f24-8f84-eb99ec5983c1"/>
+				<text><![CDATA[disciplina.descricao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="30" width="100" height="30" uuid="b0d1e9f3-c593-4471-9abc-0c0f51688cef"/>
+				<text><![CDATA[avalia.nota1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="31" width="100" height="30" uuid="053c932b-7dfa-4210-bd6d-ff71cef7555f"/>
+				<textFieldExpression><![CDATA[$F{trimestre.descricao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="189" splitType="Stretch">
+			<textField>
+				<reportElement x="-10" y="60" width="100" height="30" uuid="835dd1af-bc23-45fd-b215-bd5221527b00"/>
+				<textFieldExpression><![CDATA[$F{matricula.aluno.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="60" width="100" height="30" uuid="a9864113-926d-4a03-b521-caa4ddc9a7d2"/>
+				<textFieldExpression><![CDATA[$F{disciplina.descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="60" width="100" height="30" uuid="0ba078ea-9598-4c0d-b196-3de25e125de4"/>
+				<textFieldExpression><![CDATA[$F{avalia.nota1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

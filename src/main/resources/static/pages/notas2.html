@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nota Aluno</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<h2>NOta</h2>
+	<form>
+		<div>
+	Mome	{{nota.aluno.nome}}
+	<div class="row">
+					<div class="form-group col-md-4">
+						<label for="assunt">Nome: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.nome" />
+					</div>
+					<div class="form-group col-md-2">
+						<label for="assunt">Turma.: </label> <input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.turma.descricao" />
+					</div>
+					<div class="form-group col-md-2">
+						<label for="assunt">Semestre Lectivo: </label> <input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.descricao" />
+					</div>
+					<div class="form-group col-md-1">
+									<a href="#/listaNota" class="btn btn-default">Add aluno</a>
+			</div>
+				<button type="button" class="btn btn-link m-b-sm" style="color: red"
+					data-toggle="modal" data-target="#myModal">Buscar</button>
+				</div>					<br>
+				
+				<div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Disciplina 1: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.disciplina.dis1" />
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Nota 1.: <input type="text" ng-click="nota.n1"
+							class="form-control" /></label>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">W-1.: </label> <input type="text"
+							class="form-control" ng-click="nota.t1"/>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">Nota 2.: </label> <input type="text"
+							class="form-control" ng-click="nota.n2" />
+					</div>
+<div class="form-group col-md-1">
+						<label for="assunt">W-2.: </label> <input type="text"
+							class="form-control" ng-click="nota.t2"/>
+					</div>
+					
+<div class="form-group col-md-2">
+						<label for="assunt">Resultado</label> <input type="text" disabled="disabled" style="color:blue"
+						value="Aproved"	class="form-control" />
+					</div>
+							</div>
+							
+							<div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Disciplina 2: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.disciplina.dis2" />
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Nota 1.: <input type="text"
+							class="form-control" /></label>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">W-1.: </label> <input type="text"
+							class="form-control" />
+					</div><div class="form-group col-md-1">
+						<label for="assunt">Nota 2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+<div class="form-group col-md-1">
+						<label for="assunt">W-2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+					
+<div class="form-group col-md-2">
+						<label for="assunt">Resultado</label> <input type="text" disabled="disabled"
+							class="form-control" />
+					</div>
+							</div><div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Disciplina 3: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.disciplina.dis3" />
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Nota 1.: <input type="text"
+							class="form-control" /></label>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">W-1.: </label> <input type="text"
+							class="form-control" />
+					</div><div class="form-group col-md-1">
+						<label for="assunt">Nota 2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+<div class="form-group col-md-1">
+						<label for="assunt">W-2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+					
+<div class="form-group col-md-2">
+						<label for="assunt">Resultado</label> <input type="text" disabled="disabled"
+							class="form-control" />
+					</div>
+							</div><div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Disciplina 4: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.disciplina.dis4" />
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Nota 1.: <input type="text"
+							class="form-control" /></label>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">W-1.: </label> <input type="text"
+							class="form-control" />
+					</div><div class="form-group col-md-1">
+						<label for="assunt">Nota 2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+<div class="form-group col-md-1">
+						<label for="assunt">W-2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+					
+<div class="form-group col-md-2">
+						<label for="assunt">Resultado</label> <input type="text" disabled="disabled"
+							class="form-control" />
+					</div>
+							</div><div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Disciplina 5: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.disciplina.dis5" />
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Nota 1.: <input type="text"
+							class="form-control" /></label>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">W-1.: </label> <input type="text"
+							class="form-control" />
+					</div><div class="form-group col-md-1">
+						<label for="assunt">Nota 2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+<div class="form-group col-md-1">
+						<label for="assunt">W-2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+					
+<div class="form-group col-md-2">
+						<label for="assunt">Resultado</label> <input type="text" disabled="disabled"
+							class="form-control" />
+					</div>
+							</div>
+							<div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Disciplina 6: </label> 
+						<input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="nota.aluno.semestre.disciplina.dis6" />
+					</div>
+					<div class="form-group col-md-1">
+						<label for="assunt">Nota 1.: <input type="text"
+							class="form-control" /></label>
+					</div><div class="form-group col-md-1">
+						<label for="assunt">W-1.: </label> <input type="text"
+							class="form-control" />
+					</div><div class="form-group col-md-1">
+						<label for="assunt">Nota 2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+<div class="form-group col-md-1">
+						<label for="assunt">W-2.: </label> <input type="text"
+							class="form-control" />
+					</div>
+					
+<div class="form-group col-md-2">
+						<label for="assunt">Resultado</label> <input type="text" disabled="disabled"
+							class="form-control" />
+					</div>
+							</div>
+				</div>					<br><br>
+				
+				
+			<button type="button" class="btn btn-primary" ng-click="create(nota)">Salvar</button>
+			<a href="#/tabela" class="btn btn-link">Listar</a>
+			
+			<br>
+			<br>
+
+	</form>
+</body><div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h3 class="modal-title" id="myModalLabel">Selecionar Aluno</h3>
+							</div>
+							<div class="modal-body">
+								<input type="text" data-ng-model="pesquisa" class="form-control"
+									placeholder="Pesquisar nome"><br>
+								<div class="form-group col-md-4">
+									<label>Turma <select
+										ng-model="search.aluno.turma.descricao" class="form-control">
+											<option ng-repeat="d in turmass" value="{{d.descricao}}">{{d.descricao}}</option>
+									</select></label>
+								</div>
+								<br> <br>{{notas}}
+								<table class="table table-hover">
+									<tr>
+										<th>Nome</th>
+										<th>Turma</th>
+										<th>Turno</th>
+										<th>Accoes</th>
+									</tr>
+									<tr
+										data-ng-repeat="aluno in notas  | filter:pesquisa track by aluno.id">
+
+										<td>{{aluno.nome}}</td>
+										<td>{{aluno.turma.descricao}}</td>
+										<td>{{aluno.turno}}</td>
+										<td>
+
+
+											<button type="submit" id="add-row" data-dismiss="modal"
+												data-ng-click="alterar(aluno)" class="btn btn-default">add</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" id="add-row" data-dismiss="modal"
+									class="btn btn-success">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+</html>

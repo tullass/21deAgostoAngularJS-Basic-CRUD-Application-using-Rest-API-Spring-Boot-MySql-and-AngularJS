@@ -1,0 +1,70 @@
+
+<head>
+<title>Semestre Na Disciplina</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body data-ng-app="semestreServico">
+	<h3>Semestre Na Disciplina</h3>
+		<form>
+		<div >
+
+
+			<label for="assunt">Semestre: </label> <select class="form-control"
+				ng-model="semestre"
+				ng-options="operadora.descricao for operadora in semestres">
+				<option value=""></option>
+			</select> <label for="assunt">1 Disciplina: </label> <input type="text"
+				id="assunt" data-ng-model="semestre.disciplina.dis1"><br>
+			<br> <label for="assunt">2 Disciplina:: </label> <input
+				type="text" id="assunt" data-ng-model="semestre.disciplina.dis2"><br>
+			<br> <label for="assunt">3 Disciplina:: </label> <input
+				type="text" id="assunt" data-ng-model="semestre.disciplina.dis3"><br>
+			<br> <label for="assunt">4 Disciplina:: </label> <input
+				type="text" id="assunt" data-ng-model="semestre.disciplina.dis4"><br>
+			<br> <label for="assunt">5 Disciplina:: </label> <input
+				type="text" id="assunt" data-ng-model="semestre.disciplina.dis5"><br>
+			<br> <label for="assunt">6 Disciplina:: </label> <input
+				type="text" id="assunt" data-ng-model="semestre.disciplina.dis6"><br>
+			<br>
+
+
+			<button type="button" data-ng-click="create(descricao)"
+				class="btn btn-primary">Salvar</button>
+			<br> <br>
+			<table class="table table-hover">
+				<tr>					<th>Semestre</th>
+				
+					<th>Disciplina 1</th>
+					<th>Disciplina 2</th>
+					<th>Disciplina 3</th>
+					<th>Disciplina 4</th>
+					<th>Disciplina 5</th>
+					<th>Disciplina 6</th>
+
+					<th>Accoes</th>
+
+				</tr>
+				<tr data-ng-repeat="semestre in semestres">
+					<td>{{semestre.descricao}}</td>
+
+					<td>{{semestre.disciplina.dis1}}</td>
+					<td>{{semestre.disciplina.dis2}}</td>
+					<td>{{semestre.disciplina.dis3}}</td>
+					<td>{{semestre.disciplina.dis4}}</td>
+					<td>{{semestre.disciplina.dis5}}</td>
+					<td>{{semestre.disciplina.dis6}}</td>
+
+
+					<td>
+						<button type="button" data-ng-click="alterar(semestre)"
+							class="btn btn-default">Alterar</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+
+</html>

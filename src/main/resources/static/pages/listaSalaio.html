@@ -1,0 +1,63 @@
+
+<head>
+<title>Salarios</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+
+
+
+<br />
+
+
+<br />
+
+
+<body>
+	<h2>Lista de  Salarios pagos</h2>
+	<br>
+	<br>
+	<form>
+		<div>
+		
+			<br> <br> 	<a href="#/salarios" class="btn btn-primary"> Voltar</a>
+ <br> <br>
+			<div>
+				<table class="table table-hover">
+					<tr>
+
+						<th>Professor</th>
+						<th>Mes referente</th>
+						<th>Tipo pagamento</th>
+												<th>Valor Pago</th>
+						
+
+						<th>Observacoes</th>												<th>Data</th>
+						
+												<th>Accoes</th>
+						
+					</tr>
+					<tr
+						data-ng-repeat="banco in profepagos | filter:search:strict track by banco.id">
+
+						<td>{{banco.professor.nome}}</td>
+						<td>{{banco.mes.descricao}}</td>
+						<td>{{banco.tipoPagamento}}</td>
+
+						<td>{{banco.valorProfessor}}</td>
+
+						<td>{{banco.obs}}</td>
+												<td>{{banco.calendar| date: 'dd/MM/yyyy'}}</td>
+						
+
+						<td>		<button
+								class="btn btn-default btn-addon m-b-sm btn-rounded btn-sm">Imprimir
+							</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</body>
+
+

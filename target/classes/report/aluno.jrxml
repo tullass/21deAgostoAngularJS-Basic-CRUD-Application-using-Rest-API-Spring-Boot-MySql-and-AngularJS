@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
+<!-- 2018-08-09T20:13:41 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="aluno" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f20ea0ef-2856-4c0e-9e43-975f5e729bfc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="matricula.aluno.nome" class="java.lang.String"/>
+	<field name="mes.descricao" class="java.lang.String"/>
+	<field name="caixa" class="java.lang.Long"/>
+	<field name="calendar" class="java.lang.Object"/>
+	<field name="matricula.turma.descricao" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="24" width="140" height="46" uuid="948623a3-d0ea-4531-9a66-4885e1cb4f08"/>
+				<textElement>
+					<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[EXTRATO DE PAGAMENTOs]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="30" width="80" height="18" uuid="1912b3aa-015d-4fb4-a387-0dee76568c86"/>
+				<textElement>
+					<font fontName="Rage Italic" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="83" y="30" width="47" height="18" uuid="1d14435d-a525-4274-9e70-cce1d2e3782c"/>
+				<textElement>
+					<font fontName="Rage Italic" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="30" width="46" height="18" uuid="06d9768d-c6c2-4a38-976b-dcd48672885f"/>
+				<textElement>
+					<font fontName="Rage Italic" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="30" width="51" height="18" uuid="1ebdcec2-4fd7-450d-8878-29db926b7fe6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Rage Italic" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="0" width="70" height="30" uuid="e1982928-911d-4933-9aed-c78b6ba7acf6"/>
+				<textFieldExpression><![CDATA[$F{matricula.aluno.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="60" height="28" uuid="ec8b3750-073f-4c2b-a538-798529d08e25"/>
+				<textFieldExpression><![CDATA[$F{mes.descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="54" height="21" uuid="edd19de9-6c03-4b90-8915-25c196ba6f7b"/>
+				<textFieldExpression><![CDATA[$F{caixa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="65" height="21" uuid="cb85666d-7c7e-4bb0-941a-41d4e1f81dd7"/>
+				<textFieldExpression><![CDATA[$F{calendar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

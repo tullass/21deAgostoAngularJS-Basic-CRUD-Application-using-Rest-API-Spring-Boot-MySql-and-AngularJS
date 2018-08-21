@@ -1,0 +1,94 @@
+
+<head>
+<title>Professor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<form>
+		<div>
+			<h2>Nome</h2>
+			<input type="text" disabled="disabled"  data-ng-model="professor.nome"> <br>
+			<button  type="button"
+							data-toggle="modal" data-target="#myModal" >Carregar</button>
+			<br> <br> <br> <br> <label for="assunt">Turmas:
+			</label> <select multiple="multiple" class="selectpicker show-menu-arrow form-control"
+				ng-model="professor.turma"
+				ng-options="operadora.descricao for operadora in turmas">
+				<option value=""></option>
+			</select> <br> <br>
+			<button type="button" class="btn btn-primary"
+				data-ng-click="create(professor)">Save</button>
+		</div>
+	</form>
+	<br>
+	<br>
+
+	<br>
+	<br>
+	<table class="table table-hover">
+		<tr>
+			<th>Name</th>
+			<th>Turma</th>			
+			
+		</tr>
+		<tbody ng-repeat="c in professores">
+			<tr>
+				<td>{{c.nome}}</td>
+				<td>
+					<table>
+
+						<tbody ng-repeat="o in c.turma">
+							<tr>
+								<td>{{o.id}}</td>
+								<td>{{o.descricao}}</td><td>
+						<button type="button" data-ng-click="alterar(c)"
+							class="btn btn-default">Alterar</button>
+					</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">Adicione o Aluno</h4>
+							</div>
+							<div class="modal-body">
+								<input type="text" data-ng-model="pesquisa" class="form-control"
+									placeholder="Pesquisa"><br> <br> <br>
+								<table class="table table-hover">
+									<tr>
+										<th>Nome</th>
+										<th>Nivel</th>
+
+									</tr>
+									<tr data-ng-repeat="matricula in professores ">
+										<td>{{matricula.nome}}</td>
+
+										<td>{{matricula.nivel}}</td>
+
+										<td>
+
+
+											<button type="submit" id="add-row" data-dismiss="modal"
+												data-ng-click="alterar(matricula)" class="btn btn-default">add</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" id="add-row" data-dismiss="modal"
+									class="btn btn-success">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+</body>

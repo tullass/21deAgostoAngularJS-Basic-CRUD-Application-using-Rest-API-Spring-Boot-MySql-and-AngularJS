@@ -1,0 +1,170 @@
+
+<head>
+<title>Start Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+</head>
+
+<body>
+	<h2>Pagamentos Adiantados</h2>
+	<div style="text-align: right">
+		<label>Data: </label> {{time| date: 'dd/MM/yyyy'}}<br> <label>Horas:
+		</label> {{time| date: 'HH:mm'}}
+	</div>
+
+
+
+
+	<br>
+	<br>
+
+	<div>
+
+		<form>
+
+			<div>
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label for="assunt">Servico: </label> <select class="form-control"
+							data-ng-model=fatura.tipo.id>
+							<option value=""></option>
+							<option data-ng-repeat="fatura in tipos" value="{{fatura.id}}">{{fatura.tipo}}</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="assunt">No.: </label> <input type="text"
+							class="form-control" readonly="readonly"
+							data-ng-model="fatura.tipo.id" />
+					</div>
+					<br>,
+				</div>
+
+				<div class="row">
+					<div class="form-group col-md-2">
+						<label>Aluno<input type="text" class="form-control"
+							ng-model="fatura.matricula.aluno.nome" readonly="readonly"></label>
+					</div>
+					<div class="form-group col-md-2">
+
+						<label>Codigo<input type="text"
+							ng-model="fatura.matricula.aluno.id" readonly="readonly"
+							class="form-control"></label>
+					</div>
+					<div class="form-group col-md-3">
+						<button type="button"
+							class="btn btn-default btn-addon m-b-sm btn-rounded btn-sm"
+							data-toggle="modal" data-target="#myModal">Carregar
+							Aluno</button>
+					</div>
+				</div>
+
+				<br> <br> <br>
+
+				<div class="row">
+					<div class="form-group col-md-2">
+						<label for="assunt">Banco <select class="form-control"
+							data-ng-model=banco.fatura.id>
+								<option value=""></option>
+								<option data-ng-repeat="fatura in bancossss"
+									value="{{fatura.id}}">{{fatura.descricao}}</option>
+						</select></label>
+					</div>
+					<div class="form-group col-md-2">
+						<label> A Receber<input type="text" class="form-control"
+							style="color: red" data-ng-model="fatura.matricula.turma.nivel.valor"
+							readonly="readonly"></label>
+					</div>
+				</div>
+				<br> <br> <br> <br>
+				<div class="row">
+					<div class="form-group col-md-2">
+						<label>Prestacao</label> <select data-ng-model="fatura.prestacao"
+							class="form-control">
+							<option value=""></option>
+							<option data-ng-repeat="fatura in prestacao"
+								value="{{fatura.valuei}}">{{fatura.nome}}</option>
+						</select>
+					</div>
+					<div class="form-group col-md-2">
+						<label>Inicio Pagamento<input type="date"
+							class="form-control" ng-model="fatura.datainicio"></label>
+					</div>
+					<div class="form-group col-md-2">
+						<label>Fim Pagamento<input type="date"
+							class="form-control" ng-model="fatura.datafim">
+						</label>
+					</div>
+					<br>
+					<button ng-click="cal()" class="btn btn-default">Calculate</button>
+				</div>
+
+				<br> <br> <br>
+
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label>Valor Total: <input type="text"
+							class="form-control" ng-model="fatura.caixa" readonly="readonly"></label>
+					</div>
+				</div>
+				<br> <br>
+				<button ng-click="add(fatura)" class="btn btn-danger">salvar</button>
+				<br>
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h3 class="modal-title" id="myModalLabel">Selecionar Aluno</h3>
+							</div>
+							<div class="modal-body">
+								<input type="text" data-ng-model="pesquisa" class="form-control"
+									placeholder="Pesquisar nome"><br>
+								<div class="form-group col-md-4">
+									<label>Turma <select
+										ng-model="search.aluno.turma.descricao" class="form-control">
+											<option ng-repeat="d in turmass" value="{{d.descricao}}">{{d.descricao}}</option>
+									</select></label>
+								</div>
+								<br> <br>
+								<table class="table table-hover">
+									<tr>
+										<th>Nome</th>
+										<th>Turma</th>
+										<th>Turno</th>
+										<th>Accoes</th>
+									</tr>
+									<tr
+										data-ng-repeat="aluno in alunos  | filter:pesquisa track by aluno.id">
+
+										<td>{{aluno.nome}}</td>
+										<td>{{aluno.turma.descricao}}</td>
+										<td>{{aluno.turno}}</td>
+										<td>
+
+
+											<button type="submit" id="add-row" data-dismiss="modal"
+												data-ng-click="alterar(aluno)" class="btn btn-default">add</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" id="add-row" data-dismiss="modal"
+									class="btn btn-success">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+</body>

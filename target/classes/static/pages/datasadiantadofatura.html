@@ -1,0 +1,129 @@
+
+<head>
+<title>Pagamento Adiantado</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<form >
+	
+	<div class="tab-content">
+		<h3>Pesquisa por datas pagamentos adiantados</h3>
+		<br> <br>
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label for="exampleInputName">De:</label> <input type="text"
+					class="form-control" data-ng-model="de">
+			</div>
+			<div class="form-group  col-md-2">
+				<label for="exampleInputName2">Ate:</label> <input type="text"
+					class="form-control" placeholder="Apelido" data-ng-model="ate">
+			</div>
+
+			<div class="form-group col-md-4">
+				<label>Turma <select
+					ng-model="search.aluno.turma.descricao" class="form-control">
+						<option ng-repeat="d in turmass" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select></label>
+			</div>
+			
+		</div>
+		<div>
+			
+ <label><input type="button"
+				ng-click="limpar()" class="btn btn-success" value="Limpar Pesquisa" />
+			</label>
+
+		</div>
+
+	</div>
+	<br>
+	<h5>Pagamentos em adianstado</h5>
+	<br> <br /> <label>Imprimir<input type="checkbox"
+		ng-model="t"><br></label>
+	<div style="text-align: right">
+		<div>
+			<label>Itens per Page<select ng-model="pageNumber">
+					<option data-ng-repeat="fatura in prestacao"
+						value="{{fatura.pageNumber}}">{{fatura.nome}}</option>
+			</select></label>
+
+		</div>
+	</div>
+	dds {{total}}
+	<table id="customers" class="table table-stripped table-hover">
+		<thead ng-show="t">
+			<tr>
+				<td colspan="18" style="text-align: left"><img
+					src="app/imgs/jhpiegoMin.png" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="8" style="text-align: right"><h5>Doc.No.:
+						{{d| date: 'ddMMyymm:ss'}}</h5></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="8" style="text-align: right"><h5>Data: {{d|
+						date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td>
+			</tr>
+			<tr>
+				<td><br> <br> <br> <br> <br> <br>
+					<br></td>
+				<td colspan="5" style="text-align: center;"><h3>Pagamentos em adiantado</h3></td>
+			</tr>
+		</thead>
+		<thead>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Nivel Academico</th>
+				<th>Tipo</th>
+
+				<th>Banco</th>
+				<th>Turma</th>
+
+				<th>A receber</th>
+				<th style="color: red">Multa</th>
+				<th>Total</th>
+				<th>Data Inicio</th>				
+				<th>Data Fim</th>
+				
+
+			</tr>
+		</thead>
+
+		<tbody>
+
+			<tr
+				ng-repeat="tipo in record  | filter:search:strict | dateRangerrr : de : ate track by tipo.id" >
+
+				<td>{{tipo.matricula.aluno.nome}}</td>
+
+				<td>{{tipo.matricula.aluno.turma.nivel.descricao}}</td>
+				<td>{{tipo.tipo.tipo}}</td>
+
+				<td>{{tipo.banco.descricao}}</td>
+				<td>{{tipo.matricula.aluno.turma.descricao}}</td>
+
+				<td>{{tipo.matricula.aluno.turma.nivel.valor}} MT</td>
+				<td style="color: red">{{tipo.multa}} MT</td>
+				<td>{{tipo.caixa}} MT</td>
+				<td>{{tipo.datainicio | date: 'dd/MM/yyyy'}}</td>
+				<td>{{tipo.datafim | date: 'dd/MM/yyyy'}}</td>				
+
+			</tr>
+			 
+				
+		</tbody>
+	</table>               
+	<div class="row">
+
+		<div class="col-lg-12">
+
+			<dir-pagination-controls boundary-links="true" auto-hide="true">
+			</dir-pagination-controls>
+		</div>
+	</div>
+</form>

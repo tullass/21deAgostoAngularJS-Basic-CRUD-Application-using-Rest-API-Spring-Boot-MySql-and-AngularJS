@@ -1,0 +1,167 @@
+
+<meta charset="utf-8">
+
+				
+<body>
+
+	<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Dados Pessoais</legend>
+		<div class="form-group col-md-2">
+			<label for="assunt">Nome: </label> <input type="text"
+				data-ng-model="aluno.nome" class="form-control">
+		</div>
+
+		<div class="form-group col-md-2">
+
+			<label for="assunt">Apelido: </label> <input type="text"
+				data-ng-model="aluno.apelido" class="form-control">
+		</div>
+		<div class="form-group col-md-2">
+			<label>Estado Civil: <select id="civil" name="civil"
+				data-ng-model="aluno.ecivil" class="form-control">
+					<option>Casado</option>
+					<option>Solteiro</option>
+					<option>Divorciado</option>
+
+
+			</select>
+			</label>
+		</div> <table class="table table-bordered">
+                <tr>
+                    <td><input type="file" class="custom-file-input" multiple  file-model="seleted"></td>
+
+                </tr>
+                <tr>
+                    <td><button ng-click="upload()">Upldsoasseweed</button></td>
+                </tr>
+            </table>
+		<div class="form-group col-md-2">
+			<label>Genero: <select id="genero" name="genero"
+				data-ng-model="aluno.genero" class="form-control">
+					<option>Masculino</option>
+					<option>Feminino</option>
+					<option>Outro</option>
+
+			</select>
+			</label>
+		</div>
+
+	</fieldset>
+	<br>
+	<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Endereco</legend>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Pronvicia: </label> <select class="form-control"
+				data-ng-model="aluno.endereco.provincia">
+				<option value=""></option>
+				<option data-ng-repeat="p in pronvicias">{{p}}</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Distrito: </label> <input type="text"
+				data-ng-model="aluno.endereco.distrito" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Localidade: </label> <input type="text"
+				data-ng-model="aluno.endereco.localidade" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Bairro: </label> <input type="text"
+				data-ng-model=aluno.endereco.bairro class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Quarteirão:: </label> <input type="text"
+				data-ng-model="aluno.endereco.quarterao" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">N° Casa: </label> <input type="text"
+				data-ng-model="aluno.endereco.casa" class="form-control">
+		</div>
+	</fieldset>
+	<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Dados Paternais</legend>
+
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Nome do Pai: </label> <input type="text"
+				data-ng-model="aluno.encarregado.nomepai" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Profissao: </label> <input type="text"
+				data-ng-model="aluno.encarregado.profissaopai" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Telefone: </label> <input type="text"
+				data-ng-model="aluno.encarregado.telefonepai" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Email: </label> <input type="text"
+				data-ng-model="aluno.encarregado.emailpai" class="form-control">
+		</div>
+
+	</fieldset>
+	<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Dados Maternais</legend>
+
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Nome da Mãe: </label> <input type="text"
+				data-ng-model="aluno.encarregado.nomemae" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Profissao: </label> <input type="text"
+				data-ng-model="aluno.encarregado.profissaomae" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Telefone: </label> <input type="text"
+				data-ng-model="aluno.encarregado.telefonemae" class="form-control">
+		</div>
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Email: </label> <input type="text"
+				data-ng-model="aluno.encarregado.emailmae" class="form-control">
+		</div>
+
+	</fieldset>
+	<button type="button" data-ng-click="add(aluno)"
+		class="btn btn-success">Guardar &</button>
+	<button type="button" class="btn btn-link">Listar</button>
+
+</body>sas
+ <div class="row">
+		        <table class="table table-bordered">
+			<thead>
+    			<tr>
+    				<th>File Name</th>
+    				<th>Action</th>    				<th>X</th>
+    				
+    			</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="doc in profepagos">									<td>{{doc.id}}</td>
+				
+									<td>{{doc.nome}}</td>
+				
+					<td><a href="/doc/{{doc.id}}">{{doc.docName}}</a></td>
+					<td><a href="/doc/{{doc.id}}" target="_blank">Download</a></td>
+					<td><button ng-click="aa(doc)">edd</button></td>
+				</tr>
+			</tbody>		
+		</table>
+		</div>
+</html>

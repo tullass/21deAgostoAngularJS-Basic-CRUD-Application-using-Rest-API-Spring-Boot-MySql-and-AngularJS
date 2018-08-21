@@ -1,0 +1,90 @@
+<form name="demes">
+		<div class="row">
+			<div class="form-group col-md-4">
+
+				<label for="assunt">Pesquisar: </label> <input type="search"
+					placeholder="Escreva o nome" class="form-control"
+					data-ng-model="pesquisa.matricula.aluno.nome" id="assunt">
+
+			</div>
+
+			<div class="form-group col-md-2">
+				<label>Classe <select
+					ng-model="pesquisa.matricula.aluno.turma.nivel.descricao"
+					class="form-control" required="required"><option value=""></option>
+						<option ng-repeat="d in classess" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select>
+
+				</label>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Turmas <select
+					ng-model="pesquisas.aluno.turma.descricao" class="form-control"
+					required="required"><option value=""></option>
+						<option ng-repeat="d in turmass" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select></label>
+			</div>
+
+			<div class="form-group col-md-2">
+				<label for="assunt">Ano: </label> <select class="form-control"
+					data-ng-model="pesquisa.mes.ano" required="required">
+					<option value=""></option>
+					<option data-ng-repeat="fatura in anos" value="{{fatura.nome}}">{{fatura.nome}}</option>
+				</select>
+			</div>
+		</div>
+<br>
+<button type="button"  class="btn btn-default" ng-click="delet()">Ver pendencias</button>
+	</form>
+<br>
+<br>
+
+
+<div ng-show="m">
+	
+
+	<table class="table table-hover">
+
+
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Nivel</th>
+
+
+				<th>Mes</th>
+				<th>Ano</th>
+
+
+				<th>Data</th>
+				<th>Recebido</th>
+				<th>Atraso</th>
+
+
+
+
+
+			</tr>
+		</thead>
+		<tr ng-repeat="tipo in estudantes   |  filter:pesquisa:strict track by $index">
+					<td>{{tipo.id}}</td>
+		
+			<td>{{tipo.matricula.aluno.nome}}</td>
+
+			<td>{{tipo.matricula.aluno.turma.nivel.descricao}}</td>
+
+			<td>{{tipo.mes.descricao}}</td>
+			<td>{{tipo.mes.ano}}</td>
+
+
+			<td>{{tipo.calendar | jsonDate: 'dd MMMM yyyy'}}</td>
+			<td>{{tipo.caixa}} Mt</td>
+
+
+			<td style="color: red">{{getExp(tipo.datafim)}}</td>
+
+		</tr>
+	</table>
+</div>
+
+</body>

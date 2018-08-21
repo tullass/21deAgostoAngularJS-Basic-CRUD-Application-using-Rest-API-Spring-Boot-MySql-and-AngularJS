@@ -1,0 +1,328 @@
+<head>
+<title>Funcionario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<h3>Cadastro do Funcionario</h3>
+<br><br>
+
+<main>
+  
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Cadastros</label>
+
+  <input id="tab2" type="radio" name="tabs"  ng-show="m">
+  <label for="tab2"  ng-show="m">Disciplina</label>
+    
+  <input id="tab3"  ng-show="m" type="radio" name="tabs">
+  <label for="tab3"  ng-show="m">Turma</label>
+    
+  
+    
+  <section id="content1"> 
+        <br>
+  <fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Dados Pessoais</legend>
+	
+		<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputName">Nome:</label> <input type="text"
+									class="form-control" name="nome" id="nome" placeholder="Nome"
+									data-ng-model="professor.nome" required> <span
+									class="aviso"
+									ng-show="multiStepForm.nome.$dirty && multiStepForm.nome.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group  col-md-2">
+								<label for="exampleInputName2">Data Nascimento:</label> <input
+									type="date" class="form-control" name="apelido" id="apelido"
+									placeholder="Apelido" data-ng-model="professor.datanascimento" required>
+								<span class="aviso"
+									ng-show="multiStepForm.apelido.$dirty && multiStepForm.apelido.$error.required ">Esse
+									campo e obrigatorio</span>
+
+							</div><div class="form-group col-md-4"><label style="color: red" for="exampleInputName">Atençao! Trata-se de um Professor?:</label><input type="checkbox" ng-model="m" class="form-control"></div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label>Estado Civil: </label><select id="civil" name="civil"
+									data-ng-model="professor.ecivil" class="form-control" required>
+										<option >Casado</option>										<option >Solteiro</option>
+																				<option >Divorciado</option>										<option >Viuvo</option>
+																				
+										
+								</select>
+								 <span class="aviso"
+									ng-show="multiStepForm.civil.$dirty && multiStepForm.civil.$error.required ">Esse
+									campo e obrigatorio</span>
+
+							</div>
+							<div class="form-group col-md-4">
+								<label>Genero: </label><select id="civil" name="civil"
+									data-ng-model="professor.genero" class="form-control" required>
+										<option>Masculino</option><option>Feminino</option>
+										
+								</select>
+								 <span class="aviso"
+									ng-show="multiStepForm.civil.$dirty && multiStepForm.civil.$error.required ">Esse
+									campo e obrigatorio</span>
+						</div></div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label>Nível Académico: </label><select
+									data-ng-model="professor.nivel" id="level" name="level"
+									class="form-control col-md-4" required>
+										<option>Médio</option>
+										<option>Licenciado</option>
+										<option>Mestrado</option>
+								</select>
+								 <span class="aviso"
+									ng-show="multiStepForm.level.$dirty && multiStepForm.level.$error.required ">Esse
+									campo e obrigatorio</span>
+
+							</div>
+							<div class="form-group col-md-4"  ng-show="m">
+								<label>Area Cientifica: </label> <select class="form-control"
+									name="cienti" id="cient" data-ng-model="professor.area"
+									required>
+										<option>Ciencias</option>										<option>Letra</option>
+										
+								</select>
+								<span class="aviso"
+									ng-show="multiStepForm.cient.$dirty && multiStepForm.cient.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div><div class="row">
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">Email:</label> <input type="text"
+									id="email" name="email" data-ng-model="professor.email"
+									class="form-control" id="idInputEmail"
+									placeholder="Escreva o Skype" required> <span
+									class="aviso"
+									ng-show="multiStepForm.email.$dirty && multiStepForm.email.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">Telefone I:</label> <input
+									type="number" data-ng-model="professor.telefonei"
+									class="form-control" id="telI" name="telI"
+									placeholder="+258 *********" required><span
+									class="aviso"
+									ng-show="multiStepForm.telI.$dirty && multiStepForm.telI.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputPhone2">Telefone II:</label> <input
+									type="number" data-ng-model="professor.telefoneii"
+									class="form-control" id="telII" name="telII"
+									placeholder="+258 *********" required> <span
+									class="aviso"
+									ng-show="multiStepForm.telII.$dirty && multiStepForm.telII.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div></fieldset>
+						
+	<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Dados Endereco</legend>
+	
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputNationality">Nacionalidade:</label> <input
+									type="text" class="form-control" name="nacionalidade"
+									id="nacionalidade" placeholder="Nacionalidade"
+									data-ng-model="professor.endereco.nacionalidade" required>
+								<span class="aviso"
+									ng-show="multiStepfirst.nacionalidade.$dirty && multiStepfirst.nacionalidade.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							
+							<div class="form-group col-md-4">
+								<label>Pronvicia: <select class="form-control"
+									data-ng-model="professor.endereco.provincia" required>
+										<option data-ng-repeat="p in provinciass">{{p}}</option>
+								</select>
+								</label> <span class="aviso"
+									ng-show="multiStepfirst.endereco.$dirty && multiStepfirst.endereco.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputBirthplace">Localidade:</label> <input
+									type="text" data-ng-model="professor.endereco.localidade"
+									class="form-control" id="localidade" name="localidade"
+									placeholder="Escreva a Localidade" required> <span
+									class="aviso"
+									ng-show="multiStepfirst.localidade.$dirty && multiStepfirst.localidade.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleAddress">Bairro:</label> <input type="text"
+									class="form-control" data-ng-model="professor.endereco.bairro"
+									name="bairro" id="bairro" placeholder="Nome do Bairro" required>
+								<span class="aviso"
+									ng-show="multiStepfirst.bairro.$dirty && multiStepfirst.bairro.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputQuarteirao">Quarteirão:</label> <input
+									type="number" class="form-control"
+									data-ng-model="professor.endereco.quarterao" id="qtr" name="qtr"
+									placeholder="Nr do quarteirao" required> <span
+									class="aviso"
+									ng-show="multiStepfirst.qtr.$dirty && multiStepfirst.qtr.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputCasa">N° Casa:</label> <input
+									type="number" data-ng-model="professor.endereco.casa"
+									class="form-control" id="casa" name="casa"
+									placeholder="Nr da casa"> <span class="aviso"
+									ng-show=" multiStepfirst.casa.$dirty &&  multiStepfirst.casa.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div></fieldset>
+	<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Dados Administrativos</legend>
+
+						
+						
+						<div class="row">
+						<div class="form-group col-md-4">
+						<label for="assunt">Cargos: </label> <select class="form-control"
+							data-ng-model="professor.cargo.id">
+							<option value=""></option>
+							<option data-ng-repeat="fatura in cargoss" value="{{fatura.id}}">{{fatura.descricao}}</option>
+						</select>
+					</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputDate1">Data de Início:</label> <input
+									type="date" class="form-control" id="datai" name="datai"
+									data-ng-model="professor.administrativo.datainicio" required> <span
+									class="aviso"
+									ng-show="multiStepadm.datai.$dirty && multiStepadm.datai.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="exampleInputDate1">Data de Término:</label> <input
+									type="date" class="form-control" id="datat" name="datat"
+									data-ng-model="professor.administrativo.datafim" required> <span
+									class="aviso"
+									ng-show="multiStepadm.datat.$dirty && multiStepadm.datat.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">Experiência Profissional:</label>
+								<input type="number" class="form-control" id="exp" name="exp"
+									data-ng-model="professor.administrativo.experiencia" placeholder="Anos"
+									required> <span class="aviso"
+									ng-show="multiStepadm.exp.$dirty && multiStepadm.exp.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">Último local de trabalho:</label>
+								<input type="text" class="form-control" id="loc" name="loc"
+									data-ng-model="professor.administrativo.ulocal" placeholder="Nome" required>
+								<span class="aviso"
+									ng-show="multiStepadm.loc.$dirty && multiStepadm.loc.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+						</div>
+						<div class="row">
+						
+							<div class="form-group  col-md-4">
+								<label for="exampleInputPhone2">Salário Actual:</label> <input
+									type="number" data-ng-model="professor.administrativo.salario"
+									class="form-control" id="sala" name="sala"
+									placeholder="Ex:xxxx.**" required> <span class="aviso"
+									ng-show="multiStepadm.sala.$dirty && multiStepadm.sala.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							
+						
+							
+							<div class="form-group  col-md-4">
+								<label for="exampleInputSkype">NUIT:</label> <input
+									type="number" data-ng-model="professor.administrativo.nuit"
+									class="form-control" id="nuit" name="nuit"
+									placeholder="Ex:*********" required> <span
+									class="aviso"
+									ng-show="multiStepadm.nuit.$dirty && multiStepadm.nuit.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+				
+							<div class="form-group col-md-4">
+								<label for="exampleInputPhone">INSS:</label> <input
+									type="number" data-ng-model="professor.administrativo.inss"
+									class="form-control" id="inss" name="inss"
+									placeholder="Ex:*******" required> <span class="aviso"
+									ng-show="multiStepadm.inss.$dirty && multiStepadm.inss.$error.required ">Esse
+									campo e obrigatorio</span>
+							</div>
+							
+						</div>
+						
+    <button type="button" class="btn btn-default"
+				data-ng-click="novo()">Novo</button><legend></legend><button type="button" class="btn btn-primary"
+				data-ng-click="create(professor)">Salvar professor</button>
+						</fieldset>
+  </section>
+  
+  <section id="content2">
+  <h3>Disciplinas do Professor</h3><br>
+   	<form>
+		<div>
+
+		<div class="row">
+							<div class="form-group col-md-4"><label>Nome</label>			<input type="text" id="assunt" class="form-control" data-ng-model="professor.nome"  disabled="disabled"><br>
+			<br> <br> <br> <br></div><div class="form-group col-md-4"> <label for="assunt">Disciplina:
+			</label> <select multiple="multiple" class="selectpicker show-menu-arrow form-control"
+				ng-model="professor.disciplina"
+				ng-options="operadora.descricao for operadora in disciplinas">
+				<option value=""></option>
+			</select> </div><br></div> <br>
+			<button type="button" class="btn btn-primary"
+				data-ng-click="create(professor)">Gravar & Continuar</button>
+		</div>
+	</form>
+  </section>
+    
+  <section id="content3">
+     <h3>Turmas do Professor</h3><br>
+   	<form>
+		<div>
+
+		<div class="row">
+							<div class="form-group col-md-4"><label>Nome</label>			<input type="text" id="assunt" class="form-control" data-ng-model="professor.nome" disabled="disabled"><br>
+			<br> <br> <br> <br></div><div class="form-group col-md-4"> <label for="assunt">Turma:
+			</label> <select multiple="multiple" class="selectpicker show-menu-arrow form-control"
+				ng-model="professor.disciplina"
+				ng-options="operadora.descricao for operadora in turmas">
+				<option value=""></option>
+			</select> </div><br></div> <br>
+			<button type="button" class="btn btn-primary"
+				data-ng-click="create(professor)">Finalizar</button>
+		</div>
+	</form>
+  </section>
+    
+  <section id="content4">
+    <p>
+      Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
+    </p>
+    <p>
+      Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
+    </p>
+  </section>
+    
+</main>

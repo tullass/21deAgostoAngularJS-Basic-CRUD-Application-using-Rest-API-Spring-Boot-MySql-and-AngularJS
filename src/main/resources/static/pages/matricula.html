@@ -1,0 +1,164 @@
+
+<head>
+<title>Start Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+</head>
+<body>
+	<h3>Matricular</h3>
+	
+<br><br>
+
+
+	<div>
+			<div>
+				
+
+
+<fieldset class="scheduler-border">
+
+		<legend class="scheduler-border">Matricular Aluno</legend>		<div class="row">
+		
+						<div class="form-group col-md-2">
+						<label>Aluno<input type="text" class="form-control"
+							ng-model="matricula.aluno.nome" readonly="readonly"></label>
+					</div>
+					<div class="form-group col-md-2">
+
+						<label>Codigo<input type="text" ng-model="matricula.aluno.id"
+							readonly="readonly" class="form-control"></label>
+					</div>
+					<div class="form-group col-md-2">
+
+						<label>Genero<input type="text" ng-model="matricula.aluno.genero"
+							readonly="readonly" class="form-control"></label>
+					</div><div class="form-group col-md-2">
+
+						<label>Natural de:<input type="text" ng-model="matricula.aluno.endereco.provincia"
+							readonly="readonly" class="form-control"></label>
+					</div>
+					<div class="form-group col-md-3">
+						<button type="button"
+							class="btn btn-default btn-addon m-b-sm btn-rounded btn-sm"
+							data-toggle="modal" data-target="#myModal">Buscar Aluno</button>
+					</div>
+				</div>
+
+				<br>
+		<div class="form-group col-md-4">
+
+		<label for="assunt">Turmas: </label> <select class="form-control" ng-model="matricula.turma" ng-options="operadora.descricao for operadora in turmas">
+			<option value=""></option>
+		</select>
+		</div>
+		
+		<div class="form-group col-md-4">
+
+			<label for="assunt">Sala: </label> <input type="text" ng-model="matricula.turma.sala"
+				 class="form-control" disabled="disabled">
+		</div>
+		</div>	</fieldset>
+						<br>
+
+						<div class="row">
+							<div class="form-group col-md-2">
+					
+<label>Valor de Matricula</label> <input type="text" value="2350 MT"
+ disabled="disabled" class="form-control">
+				</div>
+				<div class="form-group col-md-2">
+					
+<label> % multa</label> <input type="number"
+  class="form-control">
+				</div>	
+						
+						</div>
+						<br>
+		
+		<div class="row">
+		<div class="form-group col-md-4">
+					<label for="assunt">Turno: </label> <select class="form-control"
+						data-ng-model="matricula.aluno.turno">
+						<option value=""></option>
+						<option data-ng-repeat="fatura in turnos" value="{{fatura.nome}}">{{fatura.nome}}</option>
+					</select>
+				</div>
+				
+				<div class="form-group col-md-3">
+					<label for="assunt">Semestre: </label> <select class="form-control" ng-model="matricula.semestre" ng-options="operadora.descricao for operadora in semestress">
+			<option value=""></option>
+		</select>
+				</div>
+				
+				
+				<div class="form-group col-md-2">
+					
+<label>Data da Matricula</label> <input type="date" ng-model="t" title="Data da Matricula" disabled="disabled" class="form-control">
+				</div>
+					<div class="form-group col-md-2">
+					
+<label>Data da Matricula</label> <input type="date"  class="form-control" >
+				</div>
+				</div>
+				
+				<br> <br>
+				<button ng-click="create(matricula)" class="btn btn-danger"> Matricular</button>
+				<br>
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h3 class="modal-title" id="myModalLabel">Selecionar Aluno</h3>
+							</div>
+							<div class="modal-body">
+								<input type="text" data-ng-model="pesquisa" class="form-control"
+									placeholder="Pesquisar nome"><br>
+								<div class="form-group col-md-4">
+									<label>Turma <select
+										ng-model="search.aluno.turma.descricao" class="form-control">
+											<option ng-repeat="d in turmass" value="{{d.descricao}}">{{d.descricao}}</option>
+									</select></label>
+								</div>
+								<br> <br>
+								<table class="table table-hover">
+									<tr>
+										<th>Nome</th>
+										<th>Turma</th>
+										<th>Turno</th>
+										<th>Accoes</th>
+									</tr>
+									<tr
+										data-ng-repeat="aluno in alunoss  | filter:pesquisa track by aluno.id">
+
+										<td>{{aluno.nome}}</td>
+										<td>{{aluno.turma.descricao}}</td>
+										<td>{{aluno.turno}}</td>
+										<td>
+
+
+											<button type="submit" id="add-row" data-dismiss="modal"
+												data-ng-click="alterar(aluno)" class="btn btn-default">add</button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="modal-footer">
+								<button type="submit" id="add-row" data-dismiss="modal"
+									class="btn btn-success">Fechar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+</body>

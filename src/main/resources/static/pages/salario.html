@@ -1,0 +1,157 @@
+
+<head>
+<title>Salarios</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+	<h3>Pagamento de Salario</h3>
+	<div style="text-align: right">
+		<label>Data: </label> {{time| date: 'dd/MM/yyyy'}}<br> <label>Horas:
+		</label> {{time| date: 'HH:mm'}}
+	</div>
+	<br>
+
+	<div>
+
+		<div class="row">
+			<div class="form-group col-md-6">
+				<label>Professor</label><input type="text" class="form-control"
+					disabled="disabled" ng-model="fatura.professor.nome">
+			</div>
+			<div class="form-group col-md-3">
+
+				<label>Codigo</label><input type="text"
+					ng-model="fatura.professor.id" readonly="readonly"
+					class="form-control">
+			</div>
+
+		</div>
+		<button type="button"
+			class="btn btn-default btn-addon m-b-sm btn-rounded btn-sm"
+			data-toggle="modal" data-target="#myModal">Buscar Professor</button>
+
+		<br> <br> <br>
+		<div class="row">
+			<div class="form-group col-md-3">
+				<label>Tipo</label> <select class="form-control"
+					data-ng-model=fatura.tipoPagamento>
+					<option value=""></option>
+					<option>Normal</option>
+					<option>Adiantado</option>
+
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Referente ao mes</label> <select class="form-control"
+					data-ng-model=fatura.mes.descricao>
+					<option value=""></option>
+					<option data-ng-repeat="fatura in meses" value="{{fatura.nome}}">{{fatura.nome}}</option>
+				</select>
+			</div><div class="form-group col-md-3">
+				<label> A receber</label><input type="text" disabled="disabled"  class="form-control"
+					data-ng-model="fatura.professor.administrativo.salario">
+			</div>
+			<div class="form-group col-md-3">
+				<label> Valor</label><input type="number" class="form-control"
+					data-ng-model="fatura.valorProfessor">
+			</div>
+
+
+		</div>
+		<br> <br>
+
+		<div class="row">
+
+			<div class="form-group col-md-10">
+				<label> Observacoes <textarea rows="5" cols="200"
+						ng-model="fatura.obs" class="form-control">
+						
+						
+						</textarea></label>
+			</div>
+			<div class="form-group col-md-2">
+				<label style="color: black"> Confirmar<input type="checkbox"
+					data-ng-model="fatura.pagou"></label>
+			</div>
+		</div>
+	</div>
+
+
+
+	<br>
+	<br>
+	<br>
+	<button ng-click="addd(fatura)" ng-show="fatura.pagou"
+		class="btn btn-primary">Guardar</button>
+	<a href="#/listar/salarios" class="btn btn-link">Ver pagamentos </a>
+
+	<br>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Adicione o Aluno</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-md-5">
+							<label>Escreva o nome</label> <input type="text"
+								data-ng-model="pesquisa" class="form-control"
+								placeholder="Pesquisa">
+						</div>
+						<div class="form-group col-md-4">
+							<label>Turma </label><select ng-model="search.cargo.descricao"
+								class="form-control" required="required"><option
+									value=""></option>
+								<option ng-repeat="d in cargoss" value="{{d.descricao}}">{{d.descricao}}</option>
+							</select>
+
+						</div>
+						<div class="form-group col-md-4">
+							<button class="btn btn-success">Buscar</button>
+						</div>
+					</div>
+					<br> <br>
+					<table class="table table-hover">
+						<tr>
+							<th>Nome</th>
+							<th>Telefone</th>
+							<th>Bairro</th>
+							<th>Tipo</th>
+							<th>Salario</th>
+
+
+
+							<th>Acções</th>
+						</tr>
+						<tr data-ng-repeat="matricula in profe ">
+							<td>{{matricula.nome}}</td>
+							<td>{{matricula.telefonei}}</td>
+							<td>{{matricula.endereco.bairro}}</td>
+							<td>{{matricula.cargo.descricao}}</td>
+							<td>{{matricula.administrativo.salario}}</td>
+
+
+
+
+							<td>
+
+
+								<button type="submit" id="add-row" data-dismiss="modal"
+									data-ng-click="altera(matricula)" class="btn btn-default">add</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>

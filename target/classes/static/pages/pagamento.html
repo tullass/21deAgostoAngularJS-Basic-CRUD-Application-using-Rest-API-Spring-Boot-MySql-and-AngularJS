@@ -1,0 +1,38 @@
+
+<head>
+<title>Despesas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<body >
+	<h3>Tipo de despesas</h3><br><br>
+		<form>
+		<div >
+<div class="row">						<div class="form-group col-md-2">
+
+			<label for="assunt">Descricao: </label> <input type="text" class="form-control"  size="50"
+				 id="assunt" data-ng-model="pagamento.descricao"><br>	
+			</div>   
+</div></div>
+			<button type="button" data-ng-click="create(pagamento)"
+				class="btn btn-primary">Salvar</button>
+			<br>
+			<br>			<br>
+						<br>
+			<br><br>
+			<table class="table table-hover">
+				<tr>
+					<th>Descricao</th>
+					<th>Accoes</th>
+
+				</tr>
+				<tr data-ng-repeat="descricao in pagamentos">
+					<td>{{descricao.descricao}}</td>
+					<td>
+						<button type="button" data-ng-click="alterar(descricao)"
+							class="btn btn-default">Alterar</button>
+					</td>
+				</tr>
+			</table>
+	</form>
+</body>

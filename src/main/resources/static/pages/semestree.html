@@ -1,0 +1,41 @@
+
+<head>
+<title>Semestre</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<body >
+	<h3>Semestre</h3>
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<script type="text/javascript" src="../ctrl/semestre.js"></script>
+	<form>
+		<div >
+
+			<label for="assunt">Descricao: </label> <input type="text"
+				 id="assunt" data-ng-model="semestre.descricao"><br>	<br>
+			
+
+			<button type="button" data-ng-click="create(descricao)"
+				class="btn btn-primary">Salvar</button>
+			<br>
+			<br>
+			<table class="table table-hover">
+				<tr>
+					<th>Descricao</th>
+					<th>Accoes</th>
+
+				</tr>
+				<tr data-ng-repeat="semestre in semestres">
+					<td>{{semestre.descricao}}</td>
+					<td>
+						<button type="button" data-ng-click="alterar(semestre)"
+							class="btn btn-default">Alterar</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+

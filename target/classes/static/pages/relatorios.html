@@ -1,0 +1,62 @@
+
+
+<head>
+<title>Relatorios Pagamentos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<body>
+	<br>
+
+	<h3>Relatorios Mensali3dades</h3>
+	<br>
+	<form>
+		<div >
+			<br>
+			<label>Selecione o Mes</label> <select class="form-control"
+				data-ng-model="pesquisa">
+				<option value=""></option>
+				<option data-ng-repeat="fatura in meses" value="{{fatura.nome}}">{{fatura.nome}}</option>
+			</select><br> <label for="assunt">Pesquisar: </label> <input
+				type="search" placeholder="Escreva o nome" data-ng-model="pesquisa" 
+				id="assunt"><br> <br> <br> <br> </label>
+			<table class="table table-hover">
+				
+
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Nivel Academico</th>
+						<th>Tipo</th>
+
+						<th>Banco</th>
+						<th>Mes</th>
+						<th>A receber</th>
+						<th style="color: red">Multa</th>
+						<th>Total</th>
+						<th>Data Emitida</th>
+
+					</tr>
+				</thead>
+				<tr
+					data-ng-repeat="tipo in faturas | filter:pesquisa track by tipo.id">
+					<td>{{tipo.matricula.aluno.nome}}</td>
+
+					<td>{{tipo.matricula.aluno.turma.nivel.descricao}}</td>
+					<td>{{tipo.tipo.tipo}}</td>
+
+					<td>{{tipo.banco.descricao}}</td>
+
+					<td>{{tipo.mes}}</td>
+					<td>{{tipo.aluno.nivel.valor}} MT</td>
+					<td style="color: red">{{tipo.multa}} MT</td>
+					<td>{{tipo.caixa}} MT</td>
+					<td>{{tipo.calendar | date: 'dd MMMM yyyy'}}</td>
+
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+

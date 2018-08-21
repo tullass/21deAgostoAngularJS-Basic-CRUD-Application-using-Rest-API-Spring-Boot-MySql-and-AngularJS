@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Banco Lista</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+	<h2>Lista Banco</h2>
+	<form>
+		<br>
+		<br>
+		<table border="1" class="table table-hover">
+			<tr>
+				<th>Nome Banco</th>
+				<th>Accoes</th>
+
+			</tr>
+			<tr data-ng-repeat="banco in bancos">
+				<td>{{banco.descricao}}</td>
+				<td><a href="#/bancoa/{{banco.id}}" class="btn btn-link">Altera</a>
+					<button type="button" data-ng-click="deletar(banco)"
+						class="btn btn-danger">Excluir</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+
+</html>

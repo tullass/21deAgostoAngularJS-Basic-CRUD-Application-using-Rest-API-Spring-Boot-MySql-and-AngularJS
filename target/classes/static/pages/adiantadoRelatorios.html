@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Adiantado</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body>
+	<br>
+
+	<a href="#/adiantadoo" class="btn btn-link">Voltar</a><br>
+	<br><br>	<h2>Relatorios Mensalidades Pagas em Adiantado</h2>
+	
+	<form>
+		<div>
+			<br> <br> <label for="assunt">Pesquisar: </label> <input
+				type="search" placeholder="Escreva o nome"
+				data-ng-model="pesquisa.matricula.aluno.nome" id="assunt"><br> <input
+				hidden="true"> <br> <br> <br> <label>Imprimir<input
+				type="checkbox" ng-model="t"><br></label>
+			<table class="table table-hover">
+<!-- 				<thead > -->
+<!-- 					<tr> -->
+<!-- 						<td colspan="18" style="text-align: left"><img -->
+<!-- 							src="imgss/jhpiegoMin.png" /></td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td></td> -->
+<!-- 						<td colspan="12" style="text-align: right"><h5>Doc.No.: -->
+<!-- 								{{time| date: 'ddMMyymm:ss'}}</h5></td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td></td> -->
+<!-- 						<td colspan="12" style="text-align: right"><h5>Data: -->
+<!-- 								{{time| date: 'dd MMMM yyyy HH:mm:ss'}}</h5></td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td><br> <br> <br> <br> <br> <br> -->
+<!-- 							<br></td> -->
+<!-- 						<td colspan="8" style="text-align: center;"><h3>Relatorios -->
+<!-- 								Mensalidades Pagos em Adiantados</h3></td> -->
+<!-- 					</tr> -->
+<!-- 				</thead> -->
+				<thead>
+					<tr>
+						<th hidden="true">Data Emitida</th>
+
+						<th>Nome</th>
+						<th>Nivel Academico</th>
+						<th>Tipo</th>
+
+						<th style="color: blue">Prestacao</th>
+
+						<th style="color: red">Data Inicio</th>
+						<th style="color: red">Data Fim</th>
+
+
+						<th>A receber</th>
+						<th style="color: red">Multa</th>
+						<th>Total</th>
+						<th>Data Operacao</th>
+						<th>Accoes</th>
+
+
+					</tr>
+				</thead>
+				<tr
+					data-ng-repeat="tipo in faturas | filter:pesquisa:strict track by tipo.id">
+					<td hidden="true">{{tipo.adiantamento}}</td>
+					<td>{{tipo.matricula.aluno.nome}}</td>
+
+					<td >{{tipo.matricula.aluno.turma.nivel.descricao}}</td>
+					<td>{{tipo.tipo.tipo}}</td>
+
+					<td style="color: blue">{{tipo.prestacao}}-Prestacoes</td>
+
+
+					<td style="color: red">{{tipo.datainicio | date: 'dd MMMM
+						yyyy'}}</td>
+					<td style="color: red">{{tipo.datafim | date: 'dd MMMM yyyy'}}</td>
+
+					<td>{{tipo.matricula.aluno.turma.nivel.valor}} MTttt</td>
+					<td style="color: red">{{tipo.multa}} MT</td>
+					<td>{{tipo.caixa}} MT</td>
+					<td>{{tipo.calendar | date: 'dd-MM-yyyy'}}</td>
+					
+					<td><a href="#/adiantadoo/{{tipo.id}}" class="btn btn-danger">Estornar</a></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+
+
+</html>

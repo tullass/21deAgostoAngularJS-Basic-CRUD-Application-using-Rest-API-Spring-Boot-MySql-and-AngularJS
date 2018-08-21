@@ -1,0 +1,128 @@
+
+
+<head>
+<title>Pagamentos Efectuados</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+	<form name="demes">
+		<div class="row">
+			<div class="form-group col-md-4">
+
+				<label for="assunt">Pesquisar: </label> <input type="search"
+					placeholder="Escreva o nome" class="form-control"
+					data-ng-model="pesquisa.matricula.aluno.nome" id="assunt">
+
+			</div>
+
+			<div class="form-group col-md-2">
+				<label>Classe <select
+					ng-model="pesquisa.matricula.aluno.turma.nivel.descricao"
+					class="form-control" required="required"><option value=""></option>
+						<option ng-repeat="d in classess" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select>
+
+				</label>
+			</div>
+			<div class="form-group col-md-2">
+				<label>Turmas <select
+					ng-model="pesquisas.aluno.turma.descricao" class="form-control"
+					required="required"><option value=""></option>
+						<option ng-repeat="d in turmass" value="{{d.descricao}}">{{d.descricao}}</option>
+				</select></label>
+			</div>
+
+			<div class="form-group col-md-2">
+				<label for="assunt">Ano: </label> <select class="form-control"
+					data-ng-model="pesquisa.mes.ano" required="required">
+					<option value=""></option>
+					<option data-ng-repeat="fatura in anos" value="{{fatura.nome}}">{{fatura.nome}}</option>
+				</select>
+			</div>
+		</div>
+	</form>
+	<br>
+
+	<h3>Pagamentos efectuados</h3>
+	<br>
+	<form>
+		<div>
+			<br> <br>
+		</div>
+	</form>
+
+</body>
+<div class="row">
+	<div class="form-group col-md-1">
+
+		Habilitar: <input type="checkbox" data-ng-model="pesquisa.mes.pago" ng-disabled="demes.$invalid"
+			id="assunt" >
+	</div>
+	<div class="form-group col-md-2">
+
+		<button class="btn btn-primary" ng-click="listaAlunoa()" 
+			ng-show="pesquisa.mes.pago" >Carregar Lista</button>
+			
+	</div>
+		
+
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Lista meses pagos</h3>
+
+			</div>
+			<div class="panel-body">
+
+				<table class="table table-hover">
+
+
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Nivel</th>
+
+
+							<th>Mes</th>
+							<th>Ano</th>
+
+
+							<th>Data</th>
+							<th>Recebido</th>
+							
+
+
+
+
+						</tr>
+					</thead>
+					<tr
+					
+						ng-repeat='tipo in filtered = (faturas |  filter:pesquisa:strict)'>
+						<td>{{tipo.matricula.aluno.nome}}</td>
+
+						<td>{{tipo.matricula.aluno.turma.nivel.descricao}}</td>
+
+						<td>{{tipo.mes.descricao}}</td>
+						<td>{{tipo.mes.ano}}</td>
+
+
+						<td>{{tipo.calendar | date: 'dd MMMM yyyy'}}</td>
+						<td>{{tipo.caixa}} Mt</td>
+						
+
+						<td hidden="true">{{tipo.mes.pago}}</td>
+
+					</tr><td></td><td></td><td></td><td></td><th>Total</th>
+					<td>{{filtered|total:'caixa'}} Mt </td>
+				</table>      
+				
+			</div>
+		</div>
+
+	</div>
+	<br><br>
+	
